@@ -12,6 +12,14 @@
 </head>
 <body>
 
+  <!-- Subtle Floating Geometric Particles (Pure CSS) -->
+  <div class="ambient-particles" aria-hidden="true">
+    <span class="particle-node pn-1"></span>
+    <span class="particle-node pn-2"></span>
+    <span class="particle-node pn-3"></span>
+    <span class="particle-node pn-4"></span>
+  </div>
+
   <!-- =========================================================================
        01. PREMIUM NAVIGATION BAR
        ========================================================================= -->
@@ -40,7 +48,7 @@
 
       <a href="#showcase" class="nav-cta-btn">
         <span>3D Laboratory</span>
-        <span aria-hidden="true">&rarr;</span>
+        <span class="btn-arrow" aria-hidden="true">&rarr;</span>
       </a>
     </div>
   </header>
@@ -58,15 +66,18 @@
             <span>INTERACTIVE CSS TECHNOLOGY | 2026–27</span>
           </div>
 
-          <h1 class="hero-title">Experience the Third Dimension.</h1>
-          <h2 class="hero-subtitle">Where Pure CSS Meets Creative Innovation.</h2>
+          <h1 class="hero-title hero-reveal">Experience the Third Dimension.</h1>
+          <h2 class="hero-subtitle">Where <span class="text-highlight-lavender">Pure CSS</span> Meets Creative Innovation.</h2>
 
           <p class="hero-desc">
             An interactive web navigation experience demonstrating the power of modern HTML5 and CSS3 through advanced 3D transformations, immersive animations, and responsive interface design — without a single line of JavaScript.
           </p>
 
           <div class="hero-actions">
-            <a href="#showcase" class="btn btn-primary">Explore 3D Experience</a>
+            <a href="#showcase" class="btn btn-primary">
+              <span>Explore 3D Experience</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
             <a href="report-demo.html" class="btn btn-secondary">View Documentation</a>
             <a href="#about" class="btn btn-ghost">About Project</a>
           </div>
@@ -157,7 +168,80 @@
     </section>
 
     <!-- =========================================================================
-         03. ADVANCED 3D ANIMATION EXPERIENCE (6 SIGNATURE DEMONSTRATIONS)
+         SIGNATURE EFFECT: ANIMATED 3D RIBBON MARQUEE
+         ========================================================================= -->
+    <section class="ribbon-marquee-section" aria-label="Animated 3D Ribbon Marquee">
+      <div class="ribbon-stage">
+        <!-- Strip 1: Royal Blue -->
+        <div class="ribbon-strip ribbon-royal">
+          <div class="ribbon-track">
+            <span class="ribbon-item">PURE CSS EXPERIENCE <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">ZERO JAVASCRIPT <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">EXPLORE THE THIRD DIMENSION <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">3D TRANSFORMATIONS <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">CREATIVE WEB TECHNOLOGY <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">INTERACTIVE CSS LAB <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">BUILT WITH HTML5 &amp; CSS3 <span class="ribbon-sep"></span></span>
+            <!-- Duplicate for seamless infinite loop -->
+            <span class="ribbon-item" aria-hidden="true">PURE CSS EXPERIENCE <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">ZERO JAVASCRIPT <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">EXPLORE THE THIRD DIMENSION <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">3D TRANSFORMATIONS <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">CREATIVE WEB TECHNOLOGY <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">INTERACTIVE CSS LAB <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">BUILT WITH HTML5 &amp; CSS3 <span class="ribbon-sep"></span></span>
+          </div>
+        </div>
+
+        <!-- Strip 2: Deep Navy -->
+        <div class="ribbon-strip ribbon-navy">
+          <div class="ribbon-track">
+            <span class="ribbon-item">PERSPECTIVE &amp; PRESERVE-3D <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">GPU COMPOSITOR MOTION <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">CREATIVE WEB TECHNOLOGY <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">BUILT WITH HTML5 &amp; CSS3 <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">PURE CSS EXPERIENCE <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">ZERO JAVASCRIPT <span class="ribbon-sep"></span></span>
+            <!-- Duplicate for seamless infinite loop -->
+            <span class="ribbon-item" aria-hidden="true">PERSPECTIVE &amp; PRESERVE-3D <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">GPU COMPOSITOR MOTION <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">CREATIVE WEB TECHNOLOGY <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">BUILT WITH HTML5 &amp; CSS3 <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">PURE CSS EXPERIENCE <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">ZERO JAVASCRIPT <span class="ribbon-sep"></span></span>
+          </div>
+        </div>
+
+        <!-- Strip 3: Lavender -->
+        <div class="ribbon-strip ribbon-lavender">
+          <div class="ribbon-track">
+            <span class="ribbon-item">INTERACTIVE CSS LAB <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">3D TRANSFORMATIONS <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">EXPLORE THE THIRD DIMENSION <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">CST ACADEMIC PROJECT 2026–27 <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item">WCAG 2.1 ACCESSIBLE <span class="ribbon-sep"></span></span>
+            <!-- Duplicate for seamless infinite loop -->
+            <span class="ribbon-item" aria-hidden="true">INTERACTIVE CSS LAB <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">3D TRANSFORMATIONS <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">EXPLORE THE THIRD DIMENSION <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">CST ACADEMIC PROJECT 2026–27 <span class="ribbon-sep"></span></span>
+            <span class="ribbon-item" aria-hidden="true">WCAG 2.1 ACCESSIBLE <span class="ribbon-sep"></span></span>
+          </div>
+        </div>
+
+        <!-- Center Rotating Circular Emblem -->
+        <div class="ribbon-center-emblem" aria-hidden="true">
+          <div class="emblem-ring"></div>
+          <div class="emblem-core">
+            <span>CSS3</span>
+            <span>3D</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         03. ADVANCED 3D ANIMATION EXPERIENCE (10 SIGNATURE DEMONSTRATIONS)
          ========================================================================= -->
     <section id="showcase" class="lab-section">
       <div class="container">
@@ -165,7 +249,7 @@
           <span class="section-badge">Signature Showcase Laboratory</span>
           <h2 class="section-title">Advanced 3D Animation Experience</h2>
           <p class="section-subtitle">
-            Six live, interactive CSS3 spatial demonstrations. Hover, focus, or click controls to test real-time 3D perspective, backface culling, and keyframe kinematics.
+            Ten live, interactive CSS3 spatial demonstrations. Hover, focus, or click controls to test real-time 3D perspective, backface culling, and keyframe kinematics.
           </p>
         </div>
 
@@ -339,6 +423,109 @@
               <span class="css-pill">border-radius morph</span>
               <span class="css-pill">rotateX(360deg)</span>
               <span class="css-pill">scale(1.14)</span>
+            </div>
+          </article>
+
+          <!-- G. FLOATING GLASS-LIKE PANELS -->
+          <article class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-g" tabindex="0">
+                <div class="glass-stack-3d">
+                  <div class="glass-pane gp-1"></div>
+                  <div class="glass-pane gp-2"></div>
+                  <div class="glass-pane gp-3">
+                    <span class="css-pill" style="align-self:flex-start;">backdrop-filter</span>
+                    <strong style="font-size:0.88rem; color:var(--navy-deep);">Translucent 3D Stack</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="lab-tag">Demonstration G</span>
+            <h3 class="lab-title">Floating Glass-Like Panels</h3>
+            <p class="lab-desc">
+              Layered translucent glassmorphic panes separated along the Z-axis with specular borders. Hover to expand panel depth.
+            </p>
+            <div class="lab-props">
+              <span class="css-pill">backdrop-filter: blur()</span>
+              <span class="css-pill">translateZ(-18px..64px)</span>
+            </div>
+          </article>
+
+          <!-- H. ORBITING GEOMETRIC ELEMENTS -->
+          <article class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-h" tabindex="0">
+                <div class="orbit-system">
+                  <div class="orbit-core"></div>
+                  <div class="orbit-plane">
+                    <div class="orbit-sat"></div>
+                  </div>
+                  <div class="orbit-plane orbit-plane-2">
+                    <div class="orbit-sat"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="lab-tag">Demonstration H</span>
+            <h3 class="lab-title">Orbiting Geometric Elements</h3>
+            <p class="lab-desc">
+              Dual tilted orbital planes carrying geometric satellites around a central core in 3D space. Hover to pause orbits.
+            </p>
+            <div class="lab-props">
+              <span class="css-pill">rotateX(68deg)</span>
+              <span class="css-pill">rotateZ(360deg)</span>
+              <span class="css-pill">preserve-3d</span>
+            </div>
+          </article>
+
+          <!-- I. ANIMATED 3D RINGS -->
+          <article class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-i" tabindex="0">
+                <div class="gyro-rings">
+                  <div class="gyro-ring gr-1"></div>
+                  <div class="gyro-ring gr-2"></div>
+                  <div class="gyro-ring gr-3"></div>
+                </div>
+              </div>
+            </div>
+            <span class="lab-tag">Demonstration I</span>
+            <h3 class="lab-title">Animated 3D Rings</h3>
+            <p class="lab-desc">
+              Concentric gyroscopic rings revolving independently across X, Y, and Z rotational axes. Hover to freeze alignment.
+            </p>
+            <div class="lab-props">
+              <span class="css-pill">rotateX / Y / Z</span>
+              <span class="css-pill">border-radius: 50%</span>
+            </div>
+          </article>
+
+          <!-- J. DEPTH-BASED CARD TRANSITIONS -->
+          <article class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-j" tabindex="0">
+                <div class="depth-deck">
+                  <div class="deck-card dc-back">
+                    <span style="font-size:0.7rem; font-weight:700; color:var(--navy-deep);">LAYER 01</span>
+                  </div>
+                  <div class="deck-card dc-mid">
+                    <span style="font-size:0.7rem; font-weight:700; color:var(--royal-blue);">LAYER 02</span>
+                  </div>
+                  <div class="deck-card dc-front">
+                    <span style="font-size:0.7rem; font-weight:700; opacity:0.8;">LAYER 03</span>
+                    <strong style="font-size:0.88rem;">Hover to Fan Deck</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="lab-tag">Demonstration J</span>
+            <h3 class="lab-title">Depth-Based Card Transitions</h3>
+            <p class="lab-desc">
+              Stacked 3D card deck that fans out with spring physics, rotating and separating along Z-depth on hover.
+            </p>
+            <div class="lab-props">
+              <span class="css-pill">translateZ(-35px..56px)</span>
+              <span class="css-pill">cubic-bezier spring</span>
             </div>
           </article>
         </div>
