@@ -82,7 +82,9 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
 .card-3d:hover,.card-3d-scene:hover .card-3d{animation-play-state:paused;transform:scale(1.05) rotateX(0deg) rotateY(0deg);box-shadow:0 22px 45px -5px rgba(20,33,61,0.2),0 12px 24px -6px rgba(20,33,61,0.12)}
 .card-3d svg,.card-3d img{display:block;width:100%;height:auto}
 @keyframes float3DTilt{0%{transform:rotateX(8deg) rotateY(-10deg) translateY(0px)}50%{transform:rotateX(0deg) rotateY(4deg) translateY(-8px)}100%{transform:rotateX(-8deg) rotateY(10deg) translateY(0px)}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.card-3d{animation:none!important;transform:none!important;transition:none!important}.card-3d:hover,.card-3d-scene:hover .card-3d{transform:none!important}}
+.surface-3d,.tilt-3d-card{perspective:800px;transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;will-change:transform}
+.surface-3d:hover,.tilt-3d-card:hover{transform:perspective(800px) translateY(-4px) rotateX(2.5deg) rotateY(-2.5deg);box-shadow:0 14px 28px rgba(20,33,61,.1),0 6px 12px rgba(20,33,61,.06)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.card-3d,.surface-3d,.tilt-3d-card{animation:none!important;transform:none!important;transition:none!important}.card-3d:hover,.card-3d-scene:hover .card-3d,.surface-3d:hover,.tilt-3d-card:hover{transform:none!important}}
 </style>
 </head>
 <body>
@@ -185,10 +187,10 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
  <section id="design">
   <h2>1. Design</h2>
   <div class="grid">
-   <div class="pill"><b>Objective</b>Fast, accessible navigation without scripts.</div>
-   <div class="pill"><b>Desktop</b>Horizontal bar, dropdown on hover and keyboard focus.</div>
-   <div class="pill"><b>Mobile (≤720px)</b>Hamburger toggles a stacked menu.</div>
-   <div class="pill"><b>Theme</b>Light/dark via <code>prefers-color-scheme</code>.</div>
+   <div class="pill surface-3d"><b>Objective</b>Fast, accessible navigation without scripts.</div>
+   <div class="pill surface-3d"><b>Desktop</b>Horizontal bar, dropdown on hover and keyboard focus.</div>
+   <div class="pill surface-3d"><b>Mobile (≤720px)</b>Hamburger toggles a stacked menu.</div>
+   <div class="pill surface-3d"><b>Theme</b>Light/dark via <code>prefers-color-scheme</code>.</div>
   </div>
   <h3>Structure</h3>
   <p>Semantic markup: <code>&lt;header&gt;</code> → <code>&lt;ul&gt;</code> list of links → nested <code>&lt;ul class="sub"&gt;</code> for the dropdown. Colours are CSS custom properties so the theme is defined once.</p>
@@ -239,7 +241,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
    <li><b>Accessibility</b> — semantic lists, ARIA label on the toggle, 44px touch target, focus styles, reduced-motion support.</li>
    <li><b>Next steps</b> — minify CSS, add <code>aria-expanded</code> via a small JS enhancement if screen-reader announcements are required.</li>
   </ul>
-  <div class="demo-card">Conclusion: a fully responsive, keyboard-friendly navigation system can be delivered with CSS alone, keeping it light, fast and easy to maintain.</div>
+  <div class="demo-card surface-3d">Conclusion: a fully responsive, keyboard-friendly navigation system can be delivered with CSS alone, keeping it light, fast and easy to maintain.</div>
  </section>
 </main>
 <footer>Micro Project · CSS-Based Web Navigation System · Dhruv & Dhanesh</footer>

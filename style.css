@@ -6,6 +6,7 @@
   --card: #ffffff;
   --text: #14213d;
   --ink: #14213d;
+  --line: #e2e6ee;
 }
 
 * {
@@ -28,6 +29,7 @@ body {
     --card: #ffffff;
     --text: #14213d;
     --ink: #14213d;
+    --line: #e2e6ee;
   }
   body {
     background: #ffffff !important;
@@ -74,7 +76,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* Pure CSS 3D Animated Showcase */
+/* =========================================================
+   Pure CSS 3D Showcase & Depth Utilities (Global & Reusable)
+   ========================================================= */
+
 .card-3d-scene {
   perspective: 900px;
   display: flex;
@@ -96,7 +101,7 @@ body {
   animation: float3DTilt 6s ease-in-out infinite alternate;
   cursor: pointer;
   overflow: hidden;
-  border: 1px solid #e2e6ee;
+  border: 1px solid var(--line, #e2e6ee);
 }
 
 .card-3d:hover,
@@ -125,18 +130,36 @@ body {
   }
 }
 
+/* Lightweight 3D Depth Utilities for Content Panels, Cards, and Feature Blocks */
+.surface-3d,
+.tilt-3d-card {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.surface-3d:hover,
+.tilt-3d-card:hover {
+  transform: perspective(800px) translateY(-4px) rotateX(2.5deg) rotateY(-2.5deg);
+  box-shadow: 0 14px 28px rgba(20, 33, 61, 0.1), 0 6px 12px rgba(20, 33, 61, 0.06);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .card-3d {
+  .card-3d,
+  .surface-3d,
+  .tilt-3d-card {
     animation: none !important;
     transform: none !important;
     transition: none !important;
   }
   .card-3d:hover,
-  .card-3d-scene:hover .card-3d {
+  .card-3d-scene:hover .card-3d,
+  .surface-3d:hover,
+  .tilt-3d-card:hover {
     transform: none !important;
   }
 }
-
 
 .hero {
   min-height: 80vh;
@@ -146,7 +169,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 8%;
-  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  background: #ffffff;
 }
 
 .hero h1 {
@@ -174,7 +197,6 @@ body {
   background: #1d4ed8;
 }
 
-
 .content {
   min-height: 40vh;
   padding: 70px 10%;
@@ -185,7 +207,6 @@ body {
   margin-bottom: 15px;
   font-size: 30px;
 }
-
 
 @media (max-width: 700px) {
   .navbar {
