@@ -1,300 +1,215 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Interactive CSS-Based Web Navigation System | CST Micro Project 2026–27</title>
-  <meta name="description" content="A premium responsive multi-page website demonstrating advanced CSS3 3D transformations, keyframe animations, and zero-JS navigation.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive CSS-Based Web Navigation System with Advanced 3D Transforms and Animations. Pure HTML5 and CSS3 academic micro-project for CST 2026-27.">
+  <title>Interactive CSS-Based Web Navigation System | 3D Experience</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- =========================================================================
-       Site Header & Interactive Navigation Bar
+       SECTION 01: STICKY NAVIGATION BAR
        ========================================================================= -->
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="#home" class="brand-logo" aria-label="CSSNav Home">
-        <div class="logo-cube-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu">
+    <div class="nav-container container">
+      <a href="index.html" class="brand-logo" aria-label="AeroNav Home">
+        <div class="brand-cube-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
         </div>
-        <span>CSS<b>Nav</b></span>
-        <span class="brand-badge">2026–27</span>
+        <span>AeroNav<span class="brand-badge">3D CST</span></span>
       </a>
 
-      <!-- CSS-only Checkbox Hamburger Toggle -->
-      <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu">
-      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle mobile menu">
         <span class="hamburger-line"></span>
       </label>
 
-      <nav aria-label="Primary navigation">
-        <ul class="nav-menu">
-          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
-          <li class="nav-item"><a href="#showcase" class="nav-link">3D Showcase</a></li>
-          <li class="nav-item"><a href="#tech" class="nav-link">Tech Specs</a></li>
-          <li class="nav-item"><a href="report-demo.html" class="nav-btn">Documentation →</a></li>
-        </ul>
+      <nav class="nav-menu" aria-label="Primary site navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#intro" class="nav-link">Overview</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#lab-3d" class="nav-link">3D Lab</a>
+        <a href="#explorer" class="nav-link">CSS Engine</a>
+        <a href="#interactions" class="nav-link">Interactions</a>
+        <a href="#responsive" class="nav-link">Responsive</a>
+        <a href="report-demo.html" class="nav-cta-btn">
+          <span>Documentation</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- =========================================================================
-         Hero Section: First Impression & Multi-Layer Floating 3D Showcase
+         SECTION 02: CINEMATIC HERO EXPERIENCE
          ========================================================================= -->
-    <section id="home" class="hero-section">
+    <section id="hero" class="hero-section">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="project-pill">
+          <div class="hero-badge-strip">
             <span class="pulse-dot" aria-hidden="true"></span>
-            CST MICRO PROJECT | 2026–27
+            <span>Academic Micro-Project 2026–27 &bull; CST</span>
           </div>
           <h1 class="hero-title">
-            Explore the World of <span class="gradient-text">CSS.</span>
+            Beyond Flat.<br>
+            <span class="gradient-text">Into the Third Dimension.</span>
           </h1>
-          <p class="hero-lead">
-            An advanced, responsive web navigation system built purely with declarative HTML5 and CSS3. Experience 60&nbsp;FPS hardware-accelerated 3D perspective, interactive flip states, geometric depth, and seamless navigation—with absolutely zero JavaScript dependencies.
+          <p class="hero-desc">
+            A research-driven, zero-JavaScript web navigation system illustrating real-time spatial transformations, matrix rotations, and layered depth powered exclusively by pure CSS3.
           </p>
           <div class="hero-actions">
-            <a href="#showcase" class="btn btn-primary">
-              <span>Explore 3D Showcase</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <a href="#lab-3d" class="btn btn-primary">
+              <span>Explore 3D Lab</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
             </a>
             <a href="report-demo.html" class="btn btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              <span>View Demonstration</span>
+              <span>View Full Report</span>
             </a>
           </div>
-
-          <div class="hero-specs">
-            <div class="spec-item">
-              <span>Institution</span>
-              <strong>MITS Gwalior</strong>
-            </div>
-            <div class="spec-item">
-              <span>Department</span>
-              <strong>Centre for CST</strong>
-            </div>
-            <div class="spec-item">
-              <span>Authors</span>
-              <strong>Dhruv &amp; Dhanesh</strong>
-            </div>
-            <div class="spec-item">
-              <span>Script Footprint</span>
-              <strong style="color: var(--accent-success);">0.0 KB (Zero JS)</strong>
-            </div>
+          <div class="hero-tag-pills">
+            <span class="tag-pill">Pure CSS3</span>
+            <span class="tag-pill">Zero JavaScript</span>
+            <span class="tag-pill">GPU Accelerated</span>
+            <span class="tag-pill">WCAG 2.1 AA</span>
           </div>
         </div>
 
-        <!-- Hero Right Column: Multi-Layer Floating 3D Graphic -->
-        <div class="hero-3d-stage" aria-label="Interactive 3D CSS Demonstration">
-          <div class="hero-3d-scene">
-            <!-- Base Layer (translateZ: 0px) -->
-            <div class="hero-layer hero-card-base">
-              <div class="card-header-bar">
-                <div class="window-dots" aria-hidden="true">
-                  <span class="window-dot red"></span>
-                  <span class="window-dot yellow"></span>
-                  <span class="window-dot green"></span>
+        <div class="hero-3d-stage" aria-label="Interactive 3D Stage Composition">
+          <div class="hero-3d-composition">
+            <!-- Base Canvas Window Layer (Z: 0px) -->
+            <div class="hero-glass-base">
+              <div class="glass-window-bar">
+                <div class="window-dots-row">
+                  <span class="window-dot-item red"></span>
+                  <span class="window-dot-item yellow"></span>
+                  <span class="window-dot-item green"></span>
                 </div>
-                <span class="header-status-badge">perspective: 1200px</span>
+                <span class="mono-badge">css-matrix://spatial-viewport</span>
               </div>
-              <div class="card-nav-preview">
-                <div class="nav-preview-item active">
-                  <span>#01 CSS 3D Matrix</span>
-                  <span>Active</span>
-                </div>
-                <div class="nav-preview-item">
-                  <span>#02 Transform Engine</span>
+              <div class="glass-preview-nav">
+                <div class="preview-nav-item active">
+                  <span>01. Spatial Depth Matrix</span>
                   <span>preserve-3d</span>
                 </div>
-                <div class="nav-preview-item">
-                  <span>#03 Keyframe Motion</span>
-                  <span>60 FPS</span>
+                <div class="preview-nav-item">
+                  <span>02. Perspective Projection</span>
+                  <span>900px</span>
+                </div>
+                <div class="preview-nav-item">
+                  <span>03. Euler Gyroscope Orbit</span>
+                  <span>rotateX/Y</span>
                 </div>
               </div>
-              <div style="font-size: 0.78rem; color: var(--text-muted); display: flex; justify-content: space-between;">
-                <span>Hardware Accelerated</span>
-                <span>GPU Composited</span>
+              <div class="code-preview-snippet">
+                <code>transform: perspective(900px) rotateX(16deg) rotateY(-18deg);</code>
               </div>
             </div>
 
-            <!-- Floating Layer 1 (translateZ: 42px) -->
-            <div class="hero-layer hero-card-floating-1" aria-hidden="true">
-              <span class="floating-label">Render Pipeline</span>
-              <span class="floating-value">60 FPS Native</span>
-              <div class="floating-bar">
-                <div class="floating-bar-fill"></div>
-              </div>
-              <span style="font-size: 0.72rem; color: var(--text-muted);">Compositor-only transforms</span>
+            <!-- Floating Card 1 (Z: 48px) -->
+            <div class="hero-floating-card-1">
+              <div class="card-chip">60 FPS Hardware Layer</div>
+              <strong>Zero Script Overhead</strong>
+              <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Offloaded to GPU compositor thread</p>
             </div>
 
-            <!-- Floating Layer 2 (translateZ: 75px) -->
-            <div class="hero-layer hero-card-floating-2" aria-hidden="true">
-              <div class="hero-pill-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <!-- Floating Card 2 (Z: 85px) -->
+            <div class="hero-floating-card-2">
+              <div class="badge-icon-blue">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
               </div>
               <div>
-                <strong style="font-size: 0.88rem; display: block; color: var(--text-primary);">Zero JavaScript</strong>
-                <span style="font-size: 0.74rem; color: var(--text-muted);">100% Pure CSS3</span>
+                <strong style="display:block; font-size:0.86rem; color:var(--text-primary);">0.0ms Script Execution</strong>
+                <span style="font-size:0.74rem; color:var(--accent-emerald); font-weight:700;">100% Declarative CSS</span>
               </div>
             </div>
+
+            <!-- Floating Geometric Accent (Z: 110px) -->
+            <div class="hero-floating-shape" aria-hidden="true"></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         About Section: Architectural Overview
+         SECTION 03: PROJECT INTRODUCTION (EDITORIAL LAYOUT)
          ========================================================================= -->
-    <section id="about" class="container" style="padding: 70px 0 40px;">
-      <div class="section-header">
-        <span class="section-tag">ARCHITECTURAL DESIGN</span>
-        <h2 class="section-title">Sophisticated Simplicity</h2>
-        <p class="section-desc">
-          Modern web design frequently defaults to heavy scripting frameworks for trivial animations. This project demonstrates how modern browser engines render fluid, accessible, and mathematically precise 3D environments using only CSS.
-        </p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 20px;">
-        <div class="feature-card">
-          <div class="feature-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <section id="intro" class="intro-section">
+      <div class="container intro-grid">
+        <div>
+          <span class="section-badge">Project Philosophy</span>
+          <h2 class="section-title">A New Dimension of Web Navigation</h2>
+          <div class="intro-lead-quote">
+            "By pushing modern CSS3 transforms to their theoretical envelope, web interfaces break out of 2D planes into dynamic 3D spatial architectures without a single byte of JavaScript."
           </div>
-          <h3>Declarative Architecture</h3>
-          <p>HTML specifies structural relationships while CSS dictates spatial geometry. Eliminating runtime scripts prevents thread contention and render blocking.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>GPU Hardware Compositing</h3>
-          <p>Properties like <code>transform</code> and <code>perspective</code> execute directly in the browser compositor thread without triggering layout reflows or repaints.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
-          <h3>Universal Resilience</h3>
-          <p>Gracefully degrades across legacy environments and immediately responds to OS-level accessibility toggles like <code>prefers-reduced-motion</code>.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         Core Section: Advanced CSS 3D Animation Showcase
-         ========================================================================= -->
-    <section id="showcase" class="showcase-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">3D ANIMATION GALLERY</span>
-          <h2 class="section-title">Interactive CSS 3D Demonstrations</h2>
-          <p class="section-desc">
-            Four visually distinct 3D animation paradigms created entirely in CSS3. Hover, focus, and observe true spatial depth, continuous rotations, and realistic lighting.
+          <p class="intro-body-text">
+            Traditional web applications frequently rely on bloated external script bundles like Three.js, GSAP, or heavy animation libraries to render basic interactive spatial perspectives. This micro-project demonstrates that modern web browsers possess world-class native 3D transformation matrices directly within the CSS compositor engine.
+          </p>
+          <p class="intro-body-text">
+            Through clean mathematical composition of <code class="inline-code">perspective</code>, <code class="inline-code">transform-style: preserve-3d</code>, Euler rotational axes (<code class="inline-code">rotateX</code>, <code class="inline-code">rotateY</code>), and pure CSS interaction states (<code class="inline-code">:hover</code>, <code class="inline-code">:checked</code>, <code class="inline-code">:focus-within</code>), this project delivers buttery-smooth 60 FPS motion fidelity with instant zero-latency loading.
           </p>
         </div>
 
-        <div class="showcase-grid">
-          <!-- CARD 1: Floating 3D Card -->
-          <div class="demo-card-box">
-            <div class="stage-floating">
-              <div class="floating-3d-card" tabindex="0" role="region" aria-label="Floating 3D Card Demonstration">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase;">Floating Physics</span>
-                  <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-primary);"></span>
-                </div>
-                <div style="text-align: center;">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 8px; color: var(--accent-primary);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                  <strong style="font-size: 1.05rem; display: block; color: var(--text-primary);">Subtle 3D Tilt</strong>
-                  <span style="font-size: 0.75rem; color: var(--text-secondary);">rotateX(9deg) rotateY(-12deg)</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: var(--text-muted);">
-                  <span>Hover to Pause</span>
-                  <span>Soft Shadow</span>
-                </div>
-              </div>
+        <div class="intro-info-panel">
+          <div class="info-panel-row">
+            <div class="info-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
             </div>
-            <div class="demo-card-meta">
-              <span class="demo-tag">Demonstration 01</span>
-              <h3>Floating 3D Card</h3>
-              <p>Continuous bi-axial floating animation oscillating across both <code>rotateX</code> and <code>rotateY</code> with an interactive hover elevation and pause state.</p>
+            <div>
+              <h4 style="font-size:0.96rem; margin-bottom:4px; color:var(--text-primary);">Academic Verification</h4>
+              <p style="font-size:0.84rem; color:var(--text-secondary); margin:0;">
+                Department of Computer Science &amp; Technology (CST), Session 2026–27. Authored by Dhruv &amp; Dhanesh at MITS Gwalior.
+              </p>
             </div>
           </div>
 
-          <!-- CARD 2: 3D Flip Card -->
-          <div class="demo-card-box">
-            <div class="stage-flip">
-              <div class="flip-card-inner" tabindex="0" role="region" aria-label="3D Flip Card Demonstration. Hover or focus to reveal reverse side.">
-                <!-- Front Face -->
-                <div class="flip-card-face flip-front">
-                  <div class="flip-icon-badge">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-                  </div>
-                  <strong style="font-size: 1.08rem; color: var(--text-primary); margin-bottom: 4px;">Flip Front Face</strong>
-                  <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">Hover cursor or focus with Tab to rotate 180°</p>
-                  <span style="font-size: 0.72rem; color: var(--accent-primary); font-weight: 700;">backface-visibility: hidden</span>
-                </div>
-                <!-- Back Face -->
-                <div class="flip-card-face flip-back">
-                  <div class="flip-icon-badge">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  </div>
-                  <strong style="font-size: 1.08rem; color: #ffffff; margin-bottom: 4px;">Flip Reverse Face</strong>
-                  <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 8px;">Rendered smoothly in CSS 3D space with cubic-bezier easing.</p>
-                  <span style="font-size: 0.72rem; color: #ffffff; font-weight: 700;">rotateY(180deg)</span>
-                </div>
-              </div>
+          <div class="info-panel-row">
+            <div class="info-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
             </div>
-            <div class="demo-card-meta">
-              <span class="demo-tag">Demonstration 02</span>
-              <h3>3D Flip Card</h3>
-              <p>Two distinct faces sharing a 3D coordinate system. On hover, the element smoothly rotates 180° on its vertical axis while hiding non-visible planes.</p>
+            <div>
+              <h4 style="font-size:0.96rem; margin-bottom:4px; color:var(--text-primary);">Zero Runtime Overhead</h4>
+              <p style="font-size:0.84rem; color:var(--text-secondary); margin:0;">
+                Eliminates garbage collection pauses and main-thread JavaScript bottlenecks by delegating all animation tasks to the browser's GPU compositor.
+              </p>
             </div>
           </div>
 
-          <!-- CARD 3: Rotating 3D Cube -->
-          <div class="demo-card-box">
-            <div class="stage-cube">
-              <div class="cube-3d" tabindex="0" role="region" aria-label="Rotating 3D Cube Demonstration">
-                <div class="cube-face face-front">FRONT</div>
-                <div class="cube-face face-back">BACK</div>
-                <div class="cube-face face-right">RIGHT</div>
-                <div class="cube-face face-left">LEFT</div>
-                <div class="cube-face face-top">TOP</div>
-                <div class="cube-face face-bottom">BASE</div>
-              </div>
+          <div class="info-panel-row">
+            <div class="info-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
             </div>
-            <div class="demo-card-meta">
-              <span class="demo-tag">Demonstration 03</span>
-              <h3>Rotating 3D Cube</h3>
-              <p>A true six-faced polyhedron built with individual planes positioned via <code>translateZ(50px)</code> and rotated continuously along all 3 geometric axes.</p>
-            </div>
-          </div>
-
-          <!-- CARD 4: Layered Parallax Depth Card -->
-          <div class="demo-card-box">
-            <div class="stage-layered">
-              <div class="layered-card" tabindex="0" role="region" aria-label="Layered Parallax Depth Card Demonstration">
-                <div class="layer-deep">
-                  <span>PARALLAX Z-AXIS DEPTH</span>
-                </div>
-                <div class="layer-mid">
-                  <span>Elevation: translateZ(35px → 50px)</span>
-                  <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px;">Interactive Multi-Plane Separation</div>
-                </div>
-                <div class="layer-top">
-                  <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-success); background: rgba(16, 185, 129, 0.12); padding: 2px 8px; border-radius: 99px;">Top Layer: 80px</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-              </div>
-            </div>
-            <div class="demo-card-meta">
-              <span class="demo-tag">Demonstration 04</span>
-              <h3>Layered Depth Card</h3>
-              <p>Multiple planes stacked on the Z-axis that physically spread outward on hover, creating an eye-catching parallax sensation without JavaScript events.</p>
+            <div>
+              <h4 style="font-size:0.96rem; margin-bottom:4px; color:var(--text-primary);">Mathematical Coordinate Spaces</h4>
+              <p style="font-size:0.84rem; color:var(--text-secondary); margin:0;">
+                Calculated perspective projections with realistic isometric angles, camera focal points, and true 3D spatial vanishing points.
+              </p>
             </div>
           </div>
         </div>
@@ -302,140 +217,610 @@
     </section>
 
     <!-- =========================================================================
-         Features Section: Responsive Grid of Capabilities
+         SECTION 04: PROJECT METRICS & STATISTICS
+         ========================================================================= -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Declarative CSS3</div>
+          <div class="stat-desc">Zero JavaScript script tags or execution hooks anywhere in the codebase.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0 KB</div>
+          <div class="stat-label">Runtime Script Weight</div>
+          <div class="stat-desc">Zero framework overhead, zero npm vulnerabilities, instantaneous initial page paint.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Live 3D Lab Demos</div>
+          <div class="stat-desc">Fully functional interactive 3D models including floating cards, cubes, and carousels.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">60 FPS</div>
+          <div class="stat-label">Hardware Framerate</div>
+          <div class="stat-desc">Silky smooth hardware-accelerated transforms rendered on GPU compositor layers.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 05: CORE FEATURES GRID
          ========================================================================= -->
     <section id="features" class="features-section">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">PROJECT FEATURES</span>
-          <h2 class="section-title">Engineered Without Compromise</h2>
-          <p class="section-desc">
-            Carefully crafted principles that bridge academic rigor with modern, production-grade interface design.
-          </p>
+        <div class="section-header-center">
+          <span class="section-badge">Architectural Pillars</span>
+          <h2 class="section-title">Core Technical Capabilities</h2>
+          <p class="section-subtitle">Engineered to showcase modern CSS3 capabilities at production scale.</p>
         </div>
 
         <div class="features-grid">
-          <div class="feature-card">
+          <div class="feature-box">
             <div class="feature-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
             </div>
-            <h3>Pure HTML5 &amp; CSS3</h3>
-            <p>100% compliant with W3C web standards. Clean semantic tags structure the document cleanly, while modular CSS rules dictate all styling and interaction.</p>
+            <h3>3D Spatial Matrix Engine</h3>
+            <p>Utilizes nested coordinate systems through <code class="inline-code">transform-style: preserve-3d</code> to create complex depth relationships between DOM elements.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-box">
             <div class="feature-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+              </svg>
             </div>
-            <h3>Zero JavaScript</h3>
-            <p>Eliminates script parsing, garbage collection pauses, and bundle bloat. Zero render-blocking assets ensures instant page delivery and optimal battery usage.</p>
+            <h3>CSS-Only State Engines</h3>
+            <p>Leverages checkbox-hack mechanics, <code class="inline-code">:focus-within</code>, and <code class="inline-code">:target</code> pseudo-classes to manage interactive UI states without JavaScript events.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-box">
             <div class="feature-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
             </div>
-            <h3>CSS 3D Transformations</h3>
-            <p>Harnesses CSS matrix mathematics—including <code>perspective</code>, <code>rotateX</code>, <code>rotateY</code>, and <code>translateZ</code>—for real 3D spatial geometry.</p>
+            <h3>Hardware Acceleration</h3>
+            <p>Every transform rule triggers GPU composite passes exclusively, preventing layout re-flows and paint cycles for stutter-free 60 FPS performance.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-box">
             <div class="feature-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+              </svg>
             </div>
-            <h3>Keyframe Animations</h3>
-            <p>Smooth, self-contained continuous motion loops defined via <code>@keyframes</code> with custom cubic-bezier timing functions for organic, lifelike behavior.</p>
+            <h3>Motion Sensitivity Fallbacks</h3>
+            <p>Full support for <code class="inline-code">@media (prefers-reduced-motion)</code> disables continuous rotations and high-velocity transforms for accessible viewing.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-box">
             <div class="feature-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
             </div>
-            <h3>Responsive Layout</h3>
-            <p>Fluid typography, CSS Grid auto-fit tracks, and flexbox containers ensure flawless display across 320px mobile viewports through 4K desktop displays.</p>
+            <h3>Fluid Responsive Viewports</h3>
+            <p>Dynamically scales 3D perspective values and spatial proportions across desktop monitors, tablets, and smartphones using CSS <code class="inline-code">clamp()</code>.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-box">
             <div class="feature-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+              </svg>
             </div>
-            <h3>Accessibility &amp; Motion Modes</h3>
-            <p>High WCAG contrast ratios, visible keyboard focus indicators, and complete motion cessation under <code>prefers-reduced-motion: reduce</code>.</p>
+            <h3>Cubic-Bezier Easing Physics</h3>
+            <p>Custom cubic-bezier timing curves (<code class="inline-code">0.34, 1.56, 0.64, 1</code>) impart natural spring and tactile inertia to all interactive micro-animations.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         Technical Implementation Section: Code Highlights
+         SECTION 06: 3D ANIMATION LABORATORY (CORE 6 DEMONSTRATIONS)
          ========================================================================= -->
-    <section id="tech" class="tech-section">
+    <section id="lab-3d" class="lab-section">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">TECHNICAL MECHANICS</span>
-          <h2 class="section-title">CSS3 Spatial Syntax &amp; Properties</h2>
-          <p class="section-desc">
-            An overview of the core Cascading Style Sheets properties powering the 3D projection engine and responsive interaction states.
-          </p>
+        <div class="section-header-center">
+          <span class="section-badge">Interactive Experiments</span>
+          <h2 class="section-title">3D Animation Laboratory</h2>
+          <p class="section-subtitle">Interact with six distinct CSS-only 3D spatial models in real time. Hover to inspect depth and pause motion.</p>
         </div>
 
-        <div class="tech-grid">
-          <!-- Code 1 -->
-          <div class="code-card">
-            <div class="code-card-header">
-              <span class="code-title">perspective &amp; transform-style</span>
-              <span class="code-badge">Projection</span>
+        <div class="lab-grid">
+          <!-- DEMO A: Continuous Floating Card -->
+          <div class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-demo-a">
+                <div class="floating-card-element" tabindex="0" aria-label="Demo A: Continuous Floating 3D Card">
+                  <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span class="mono-badge">Euler Tilt</span>
+                    <span style="font-size:0.75rem; color:var(--accent-blue); font-weight:700;">&plusmn;14&deg;</span>
+                  </div>
+                  <div>
+                    <h4 style="font-size:0.95rem; margin-bottom:4px; color:var(--text-primary);">Harmonic Gyroscope</h4>
+                    <p style="font-size:0.78rem; color:var(--text-secondary); margin:0;">Continuous compound rotation across dual spatial axes.</p>
+                  </div>
+                  <div style="font-size:0.72rem; color:var(--text-muted); font-family:monospace;">hover: pause + zoom</div>
+                </div>
+              </div>
             </div>
-            <pre><code><span class="code-selector">.scene-container</span> {
-  <span class="code-property">perspective</span>: <span class="code-value">1200px</span>;
-  <span class="code-property">perspective-origin</span>: <span class="code-value">50% 50%</span>;
-}
-
-<span class="code-selector">.element-3d</span> {
-  <span class="code-property">transform-style</span>: <span class="code-value">preserve-3d</span>;
-}</code></pre>
-            <div class="code-card-desc">
-              Initializes a vanishing point distance on the parent and establishes a true 3D spatial coordinate context for descendant elements.
-            </div>
-          </div>
-
-          <!-- Code 2 -->
-          <div class="code-card">
-            <div class="code-card-header">
-              <span class="code-title">translateZ() &amp; Depth Layers</span>
-              <span class="code-badge">Z-Axis</span>
-            </div>
-            <pre><code><span class="code-selector">.card-layer-base</span> {
-  <span class="code-property">transform</span>: <span class="code-value">translateZ(0px)</span>;
-}
-<span class="code-selector">.card-layer-elevated</span> {
-  <span class="code-property">transform</span>: <span class="code-value">translateZ(45px)</span>;
-}
-<span class="code-selector">.card:hover .card-layer-elevated</span> {
-  <span class="code-property">transform</span>: <span class="code-value">translateZ(75px)</span>;
-}</code></pre>
-            <div class="code-card-desc">
-              Positions geometric planes perpendicular to the display screen, creating physical separation and tactile depth on user interaction.
+            <div class="lab-meta">
+              <span class="lab-tag">Demonstration A</span>
+              <h3 class="lab-title">Continuous Floating 3D Card</h3>
+              <p class="lab-desc">Generates continuous spatial oscillation across X and Y axes using an alternating cubic-bezier keyframe loop.</p>
+              <div class="lab-css-props">
+                <span class="css-pill">perspective: 900px</span>
+                <span class="css-pill">rotateX(10deg)</span>
+                <span class="css-pill">rotateY(-14deg)</span>
+                <span class="css-pill">transform-style: preserve-3d</span>
+              </div>
             </div>
           </div>
 
-          <!-- Code 3 -->
-          <div class="code-card">
-            <div class="code-card-header">
-              <span class="code-title">@keyframes &amp; Continuous Motion</span>
-              <span class="code-badge">Animation</span>
+          <!-- DEMO B: Interactive 3D Flip Card -->
+          <div class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-demo-b" tabindex="0" aria-label="Demo B: Interactive 3D Flip Card">
+                <div class="flip-box-inner">
+                  <div class="flip-side front">
+                    <div style="width:40px; height:40px; border-radius:50%; background:rgba(67,97,238,0.1); color:var(--accent-blue); display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                      </svg>
+                    </div>
+                    <strong style="font-size:0.95rem; color:var(--text-primary);">Front Face</strong>
+                    <span style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">Hover to Flip 180&deg;</span>
+                  </div>
+                  <div class="flip-side back">
+                    <strong style="font-size:0.95rem; margin-bottom:6px;">Back Face</strong>
+                    <span style="font-size:0.76rem; opacity:0.9;">backface-visibility: hidden</span>
+                    <span style="font-size:0.72rem; margin-top:8px; opacity:0.75;">rotateY(180deg)</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <pre><code><span class="code-keyword">@keyframes</span> <span class="code-selector">floatLoop</span> {
-  <span class="code-property">0%</span> {
-    <span class="code-property">transform</span>: <span class="code-value">rotateX(8deg) rotateY(-10deg)</span>;
-  }
-  <span class="code-property">100%</span> {
-    <span class="code-property">transform</span>: <span class="code-value">rotateX(-8deg) rotateY(10deg)</span>;
-  }
+            <div class="lab-meta">
+              <span class="lab-tag">Demonstration B</span>
+              <h3 class="lab-title">Interactive 3D Flip Card</h3>
+              <p class="lab-desc">Seamless double-sided card flip with hardware-clipped backface culling and elastic spring physics.</p>
+              <div class="lab-css-props">
+                <span class="css-pill">backface-visibility: hidden</span>
+                <span class="css-pill">rotateY(180deg)</span>
+                <span class="css-pill">transition: 0.8s</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DEMO C: Rotating 3D Cube -->
+          <div class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-demo-c" tabindex="0" aria-label="Demo C: Rotating 3D Cube">
+                <div class="cube-assembly">
+                  <div class="cube-plane c-front">FRONT</div>
+                  <div class="cube-plane c-back">BACK</div>
+                  <div class="cube-plane c-right">RIGHT</div>
+                  <div class="cube-plane c-left">LEFT</div>
+                  <div class="cube-plane c-top">TOP</div>
+                  <div class="cube-plane c-bottom">BOTTOM</div>
+                </div>
+              </div>
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Demonstration C</span>
+              <h3 class="lab-title">Six-Faced 3D Rotating Cube</h3>
+              <p class="lab-desc">A true geometric hexahedron constructed with six DOM planes translated 45px outward from center along the Z-axis.</p>
+              <div class="lab-css-props">
+                <span class="css-pill">translateZ(45px)</span>
+                <span class="css-pill">rotateX/Y/Z</span>
+                <span class="css-pill">animation: 12s linear</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DEMO D: Layered 3D Parallax Card -->
+          <div class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-demo-d" tabindex="0" aria-label="Demo D: Layered 3D Parallax Card">
+                <div class="parallax-card-box">
+                  <div class="par-layer-1" style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:0.72rem; font-weight:700; color:var(--accent-blue); text-transform:uppercase;">Z: 25px Ground</span>
+                    <span class="status-badge">Parallax Active</span>
+                  </div>
+                  <div class="par-layer-2">
+                    <h4 style="font-size:1.05rem; color:var(--text-primary); margin-bottom:4px;">Elevated Content</h4>
+                    <p style="font-size:0.78rem; color:var(--text-secondary); margin:0;">Z-offset creates noticeable depth parallax on hover.</p>
+                  </div>
+                  <div class="par-layer-3" style="display:flex; justify-content:flex-end;">
+                    <span style="background:var(--accent-blue); color:#fff; font-size:0.72rem; font-weight:700; padding:4px 10px; border-radius:4px; box-shadow:0 4px 10px rgba(67,97,238,0.3);">Z: 80px Top</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Demonstration D</span>
+              <h3 class="lab-title">Layered 3D Parallax Card</h3>
+              <p class="lab-desc">Multiple internal layers separate dynamically along the Z-axis upon interaction to simulate physical depth.</p>
+              <div class="lab-css-props">
+                <span class="css-pill">translateZ(15px...80px)</span>
+                <span class="css-pill">transform-style: preserve-3d</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DEMO E: 3D Cylindrical Carousel -->
+          <div class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-demo-e" tabindex="0" aria-label="Demo E: 3D Cylindrical Carousel">
+                <div class="carousel-ring">
+                  <div class="carousel-panel panel-1">ITEM 01</div>
+                  <div class="carousel-panel panel-2">ITEM 02</div>
+                  <div class="carousel-panel panel-3">ITEM 03</div>
+                  <div class="carousel-panel panel-4">ITEM 04</div>
+                  <div class="carousel-panel panel-5">ITEM 05</div>
+                </div>
+              </div>
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Demonstration E</span>
+              <h3 class="lab-title">3D Cylindrical Carousel</h3>
+              <p class="lab-desc">A five-panel carousel ring arranged radially using calculated 72&deg; angular increments and radial push along Z.</p>
+              <div class="lab-css-props">
+                <span class="css-pill">rotateY(72deg * n)</span>
+                <span class="css-pill">translateZ(105px)</span>
+                <span class="css-pill">hover: pause</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DEMO F: Morphing Geometric Elements -->
+          <div class="lab-card">
+            <div class="lab-viewport">
+              <div class="stage-demo-f" tabindex="0" aria-label="Demo F: Morphing Geometric Elements">
+                <div class="morph-shape-element" tabindex="0">
+                  <span>MORPH</span>
+                </div>
+              </div>
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Demonstration F</span>
+              <h3 class="lab-title">Geometric Morphing in 3D</h3>
+              <p class="lab-desc">Continuous interpolation between polygonal border radii, hue rotations, and compound 360&deg; spatial revolutions.</p>
+              <div class="lab-css-props">
+                <span class="css-pill">border-radius: 8px &rarr; 50%</span>
+                <span class="css-pill">rotateX(360deg)</span>
+                <span class="css-pill">scale(1.15)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 07: CSS TECHNOLOGY EXPLORER (DARK CODE CARDS)
+         ========================================================================= -->
+    <section id="explorer" class="tech-explorer-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-badge">Implementation Details</span>
+          <h2 class="section-title">CSS Technology Explorer</h2>
+          <p class="section-subtitle">Examine the foundational CSS3 properties powering every 3D interaction in this project.</p>
+        </div>
+
+        <div class="code-explorer-grid">
+          <!-- Code Card 1 -->
+          <div class="code-panel">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="c-dot red"></span>
+                <span class="c-dot yellow"></span>
+                <span class="c-dot green"></span>
+              </div>
+              <span class="code-property-title">perspective: 900px</span>
+            </div>
+            <pre><code><span class="syn-selector">.card-3d-scene</span> {
+  <span class="syn-prop">perspective</span>: <span class="syn-val">900px</span>;
+  <span class="syn-prop">perspective-origin</span>: <span class="syn-val">50% 50%</span>;
+  <span class="syn-comment">/* Defines distance from viewer to Z=0 */</span>
 }</code></pre>
-            <div class="code-card-desc">
-              Orchestrates smooth interpolation across multi-axis rotations using hardware-accelerated compositor keyframe curves.
+            <div class="code-explanation">
+              Establishes the focal distance of the virtual camera. Smaller values produce extreme perspective foreshortening; higher values produce subtle isometric projections.
             </div>
+          </div>
+
+          <!-- Code Card 2 -->
+          <div class="code-panel">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="c-dot red"></span>
+                <span class="c-dot yellow"></span>
+                <span class="c-dot green"></span>
+              </div>
+              <span class="code-property-title">transform-style: preserve-3d</span>
+            </div>
+            <pre><code><span class="syn-selector">.card-3d</span> {
+  <span class="syn-prop">transform-style</span>: <span class="syn-val">preserve-3d</span>;
+  <span class="syn-prop">transform</span>: <span class="syn-val">rotateX(10deg)</span>;
+  <span class="syn-comment">/* Prevents child elements from flattening */</span>
+}</code></pre>
+            <div class="code-explanation">
+              Crucial rule ensuring nested child elements exist within the same unified 3D coordinate space rather than being flattened onto their parent's 2D canvas plane.
+            </div>
+          </div>
+
+          <!-- Code Card 3 -->
+          <div class="code-panel">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="c-dot red"></span>
+                <span class="c-dot yellow"></span>
+                <span class="c-dot green"></span>
+              </div>
+              <span class="code-property-title">translateZ() Spatial Depth</span>
+            </div>
+            <pre><code><span class="syn-selector">.layer-elevated</span> {
+  <span class="syn-prop">transform</span>: <span class="syn-val">translateZ(45px)</span>;
+  <span class="syn-prop">transition</span>: <span class="syn-val">transform 0.4s ease</span>;
+  <span class="syn-comment">/* Extrudes DOM element along Z axis */</span>
+}</code></pre>
+            <div class="code-explanation">
+              Pushes elements closer to or further from the virtual camera along the perpendicular Z-axis, creating realistic layered parallax without altering layout geometry.
+            </div>
+          </div>
+
+          <!-- Code Card 4 -->
+          <div class="code-panel">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="c-dot red"></span>
+                <span class="c-dot yellow"></span>
+                <span class="c-dot green"></span>
+              </div>
+              <span class="code-property-title">backface-visibility: hidden</span>
+            </div>
+            <pre><code><span class="syn-selector">.flip-front, .flip-back</span> {
+  <span class="syn-prop">backface-visibility</span>: <span class="syn-val">hidden</span>;
+  <span class="syn-prop">-webkit-backface-visibility</span>: <span class="syn-val">hidden</span>;
+  <span class="syn-comment">/* Culls rear-facing surfaces */</span>
+}</code></pre>
+            <div class="code-explanation">
+              Optimizes performance and renders clean two-sided flip cards by culling any surface pointing away from the camera viewpoint.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 08: INTERACTION SHOWCASE (UI EXPERIMENTS)
+         ========================================================================= -->
+    <section id="interactions" class="interactions-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-badge">UI Micro-Interactions</span>
+          <h2 class="section-title">CSS-Only Interaction Showcase</h2>
+          <p class="section-subtitle">Tactile buttons, dynamic toggles, and reactive borders crafted without a single JavaScript event listener.</p>
+        </div>
+
+        <div class="interactions-grid">
+          <!-- UI Experiment 1: 3D Push Button -->
+          <div class="ui-experiment-card">
+            <div>
+              <span class="mono-badge">Physical Press</span>
+              <h4 style="font-size:1.1rem; color:var(--text-primary); margin:8px 0 6px;">3D Push Button</h4>
+              <p style="font-size:0.86rem; color:var(--text-secondary); margin:0;">
+                Simulates real-world mechanical keypress resistance via depth box-shadow transitions.
+              </p>
+            </div>
+            <div class="ui-preview-area">
+              <button class="btn-3d-push" type="button">PRESS ME</button>
+            </div>
+            <span style="font-size:0.74rem; color:var(--text-muted); font-family:monospace;">:active { transform: translateY(5px); }</span>
+          </div>
+
+          <!-- UI Experiment 2: CSS Toggle Switch -->
+          <div class="ui-experiment-card">
+            <div>
+              <span class="mono-badge">Checkbox Hack</span>
+              <h4 style="font-size:1.1rem; color:var(--text-primary); margin:8px 0 6px;">CSS-Only Toggle Switch</h4>
+              <p style="font-size:0.86rem; color:var(--text-secondary); margin:0;">
+                Maintains binary UI state through semantic <code class="inline-code">&lt;input type="checkbox"&gt;</code> and sibling selectors.
+              </p>
+            </div>
+            <div class="ui-preview-area">
+              <label class="css-toggle-switch" aria-label="Toggle demo state">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <span style="font-size:0.74rem; color:var(--text-muted); font-family:monospace;">input:checked + .toggle-slider::before</span>
+          </div>
+
+          <!-- UI Experiment 3: Animated Border Glow -->
+          <div class="ui-experiment-card">
+            <div>
+              <span class="mono-badge">Luminescent Filter</span>
+              <h4 style="font-size:1.1rem; color:var(--text-primary); margin:8px 0 6px;">Border Glow Box</h4>
+              <p style="font-size:0.86rem; color:var(--text-secondary); margin:0;">
+                Smooth luminous intensity shift on hover utilizing hardware-accelerated box-shadow.
+              </p>
+            </div>
+            <div class="ui-preview-area">
+              <div class="border-glow-box" tabindex="0">GLOW CARD</div>
+            </div>
+            <span style="font-size:0.74rem; color:var(--text-muted); font-family:monospace;">box-shadow: 0 0 16px rgba(...)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 09: RESPONSIVE DESIGN (CSS DEVICE MOCKUPS)
+         ========================================================================= -->
+    <section id="responsive" class="responsive-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-badge">Cross-Device Architecture</span>
+          <h2 class="section-title">Responsive Multi-Device Adaptation</h2>
+          <p class="section-subtitle">Adaptive viewport scaling that gracefully transforms 3D coordinate matrices across all form factors.</p>
+        </div>
+
+        <div class="devices-mockup-row">
+          <!-- Desktop Mockup -->
+          <div class="mockup-desktop" aria-label="Desktop Monitor Device Mockup">
+            <div class="mockup-inner-nav"></div>
+            <div class="mockup-inner-content">
+              <div class="mockup-bar" style="width:70%;"></div>
+              <div class="mockup-bar" style="width:40%;"></div>
+              <div style="display:flex; gap:6px; margin-top:8px;">
+                <div style="flex:1; height:45px; background:#e2e8f0; border-radius:3px;"></div>
+                <div style="flex:1; height:45px; background:#cbd5e1; border-radius:3px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tablet Mockup -->
+          <div class="mockup-tablet" aria-label="Tablet Device Mockup">
+            <div class="mockup-inner-nav"></div>
+            <div class="mockup-inner-content">
+              <div class="mockup-bar" style="width:85%;"></div>
+              <div class="mockup-bar" style="width:60%;"></div>
+              <div style="height:36px; background:#e2e8f0; border-radius:3px; margin-top:8px;"></div>
+            </div>
+          </div>
+
+          <!-- Mobile Mockup -->
+          <div class="mockup-mobile" aria-label="Mobile Device Mockup">
+            <div class="mockup-inner-nav" style="height:12px;"></div>
+            <div class="mockup-inner-content">
+              <div class="mockup-bar" style="width:90%; height:6px;"></div>
+              <div class="mockup-bar" style="width:50%; height:6px;"></div>
+              <div style="height:28px; background:#e2e8f0; border-radius:3px; margin-top:4px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; max-width:680px; margin:24px auto 0;">
+          <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.6;">
+            Perspective projections dynamically adjust using CSS <code class="inline-code">clamp(600px, 80vw, 1200px)</code>, ensuring consistent optical depth from large 4K displays down to compact mobile viewports without horizontal clipping.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 10: ACCESSIBILITY & PERFORMANCE
+         ========================================================================= -->
+    <section class="a11y-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-badge">Standards &amp; Compliance</span>
+          <h2 class="section-title">Accessibility &amp; Performance Engineering</h2>
+          <p class="section-subtitle">Built to satisfy WCAG 2.1 AA accessibility guidelines and green Core Web Vitals thresholds.</p>
+        </div>
+
+        <div class="a11y-grid">
+          <div class="a11y-card">
+            <h4>Motion Sensitivity (<code class="inline-code">prefers-reduced-motion</code>)</h4>
+            <p>
+              Users with vestibular balance disorders or motion sensitivities receive immediate static fallbacks via CSS media queries, disabling all continuous spatial rotations and extreme translations.
+            </p>
+          </div>
+
+          <div class="a11y-card">
+            <h4>Keyboard Focusability &amp; Outlines</h4>
+            <p>
+              Interactive elements feature explicit <code class="inline-code">:focus-visible</code> indicators with high-contrast outlines and appropriate z-index elevation, ensuring complete accessibility via keyboard navigation.
+            </p>
+          </div>
+
+          <div class="a11y-card">
+            <h4>Lighthouse 100 Performance Score</h4>
+            <p>
+              With zero JavaScript bundles to parse, compile, or execute, the entire application achieves instant First Contentful Paint (FCP) and zero Cumulative Layout Shift (CLS).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 11: PROJECT ARCHITECTURE (MODULAR FILE TREE)
+         ========================================================================= -->
+    <section class="architecture-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-badge">File Structure</span>
+          <h2 class="section-title">Clean Modular Code Architecture</h2>
+          <p class="section-subtitle">Structured strictly into three decoupled, production-grade files.</p>
+        </div>
+
+        <div class="arch-cards-row">
+          <div class="arch-file-card">
+            <span class="arch-file-badge">index.html</span>
+            <h4 style="font-size:1.1rem; color:var(--text-primary); margin-bottom:8px;">Main Application Experience</h4>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:12px;">
+              Contains the complete 13-section semantic landing experience, interactive 3D laboratory viewports, and CSS interaction demos.
+            </p>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-family:monospace;">Semantic HTML5 &bull; Zero Inline Scripts</span>
+          </div>
+
+          <div class="arch-file-card">
+            <span class="arch-file-badge">report-demo.html</span>
+            <h4 style="font-size:1.1rem; color:var(--text-primary); margin-bottom:8px;">Academic Research Report</h4>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:12px;">
+              An 18-part comprehensive academic dissertation complete with mathematical proofs, architecture diagrams, and testing audit matrix.
+            </p>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-family:monospace;">Sticky TOC &bull; Academic Meta &bull; Tables</span>
+          </div>
+
+          <div class="arch-file-card">
+            <span class="arch-file-badge">style.css</span>
+            <h4 style="font-size:1.1rem; color:var(--text-primary); margin-bottom:8px;">Unified Styling Engine</h4>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:12px;">
+              Complete design system containing CSS custom properties, 3D keyframe animations, responsive media queries, and light-theme locks.
+            </p>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-family:monospace;">Pure CSS3 &bull; CSS Grid &bull; GPU Acceleration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 12: FINAL CALL TO ACTION
+         ========================================================================= -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <span class="section-badge">Ready to Dive Deeper?</span>
+          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.5rem); font-weight:800; color:var(--text-primary); margin:12px 0 16px;">
+            Experience the True Power of Pure CSS3
+          </h2>
+          <p style="font-size:1.05rem; color:var(--text-secondary); max-width:620px; margin:0 auto 32px; line-height:1.65;">
+            Read our in-depth 18-part academic report for detailed mathematical formulas, Euler rotation proofs, compositor optimizations, and cross-browser audit tables.
+          </p>
+          <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+            <a href="report-demo.html" class="btn btn-primary">
+              <span>Read Full Academic Report</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#lab-3d" class="btn btn-secondary">
+              <span>Revisit 3D Laboratory</span>
+            </a>
           </div>
         </div>
       </div>
@@ -443,41 +828,53 @@
   </main>
 
   <!-- =========================================================================
-       Global Footer
+       SECTION 13: MINIMALIST PROFESSIONAL FOOTER
        ========================================================================= -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h4>CSSNav · Interactive Navigation System</h4>
-          <p>
-            A first-year CST academic micro-project for the academic year 2026–27. Engineered with pure HTML5 and CSS3 to showcase the pinnacle of declarative web animation and spatial interfaces.
+    <div class="container footer-content">
+      <div class="footer-top-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom:12px;">
+            <div class="brand-cube-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <span>AeroNav<span class="brand-badge">3D CST</span></span>
+          </a>
+          <p style="font-size:0.86rem; color:var(--text-muted); max-width:320px; line-height:1.6;">
+            A research micro-project demonstrating advanced declarative 3D web navigation and spatial UI transforms with pure CSS3.
           </p>
         </div>
-        <div class="footer-links">
-          <h5>Navigation</h5>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Architecture</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#showcase">3D Showcase</a></li>
-            <li><a href="#tech">Tech Specs</a></li>
+
+        <div>
+          <h5 style="font-size:0.84rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-primary); margin-bottom:12px;">Navigation</h5>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:0.86rem;">
+            <li><a href="#hero" style="color:var(--text-secondary); text-decoration:none;">Hero Stage</a></li>
+            <li><a href="#intro" style="color:var(--text-secondary); text-decoration:none;">Project Overview</a></li>
+            <li><a href="#lab-3d" style="color:var(--text-secondary); text-decoration:none;">3D Laboratory</a></li>
+            <li><a href="#explorer" style="color:var(--text-secondary); text-decoration:none;">CSS Engine</a></li>
+            <li><a href="#interactions" style="color:var(--text-secondary); text-decoration:none;">Micro-Interactions</a></li>
           </ul>
         </div>
-        <div class="footer-links">
-          <h5>Academic Details</h5>
-          <ul>
-            <li><a href="report-demo.html">Full Documentation</a></li>
-            <li><span>Centre for CST</span></li>
-            <li><span>MITS Gwalior</span></li>
-            <li><span>Authors: Dhruv &amp; Dhanesh</span></li>
-          </ul>
+
+        <div>
+          <h5 style="font-size:0.84rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-primary); margin-bottom:12px;">Academic Context</h5>
+          <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.6; margin:0 0 8px;">
+            <strong>Department:</strong> Computer Science &amp; Technology (CST)
+          </p>
+          <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.6; margin:0 0 8px;">
+            <strong>Institution:</strong> Madhav Institute of Technology &amp; Science (MITS)
+          </p>
+          <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            <strong>Authors:</strong> Dhruv &amp; Dhanesh (Session 2026–27)
+          </p>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <span>© 2026–27 CST Micro Project · Interactive CSS-Based Web Navigation System</span>
-        <a href="#home" style="color: var(--accent-primary); font-weight: 600;">Back to Top ↑</a>
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026–2027 Academic Micro-Project &bull; Computer Science &amp; Technology &bull; MITS Gwalior.</span>
+        <span>Built with 100% Pure HTML5 &amp; CSS3 &bull; Zero JavaScript</span>
       </div>
     </div>
   </footer>
