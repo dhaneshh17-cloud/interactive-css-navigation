@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interactive CSS-Based Web Navigation System</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f7f8fa;--card:#fff;--ink:#14213d;--muted:#5b6475;--brand:#2a5bd7;--brand-ink:#fff;--line:#e2e6ee;--ok:#1b8a4b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1320;--card:#161d2f;--ink:#e8ecf6;--muted:#9aa5bd;--brand:#6c93ff;--brand-ink:#0e1320;--line:#273049;--ok:#4cd08a}}
+:root[data-theme="dark"]{--bg:#0e1320;--card:#161d2f;--ink:#e8ecf6;--muted:#9aa5bd;--brand:#6c93ff;--brand-ink:#0e1320;--line:#273049;--ok:#4cd08a}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}
+
+/* ---------- NAVIGATION ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--card);border-bottom:1px solid var(--line)}
+.bar{max-width:960px;margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;min-height:56px}
+.brand{font-weight:700;letter-spacing:-.01em}.brand b{color:var(--brand)}
+#toggle{position:absolute;opacity:0;pointer-events:none}
+.burger{display:none;width:44px;height:44px;place-items:center;cursor:pointer;border-radius:8px}
+.burger span,.burger span::before,.burger span::after{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s;content:"";position:relative}
+.burger span::before{position:absolute;top:-7px}.burger span::after{position:absolute;top:7px}
+#toggle:checked~.bar .burger span{background:transparent}
+#toggle:checked~.bar .burger span::before{transform:translateY(7px) rotate(45deg)}
+#toggle:checked~.bar .burger span::after{transform:translateY(-7px) rotate(-45deg)}
+#toggle:focus-visible~.bar .burger{outline:2px solid var(--brand)}
+
+.menu{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+.menu>li{position:relative}
+.menu a,.menu .dd-label{display:block;padding:10px 14px;border-radius:8px;color:var(--muted);font-weight:500;transition:background .2s,color .2s}
+.menu a:hover,.menu a:focus-visible,.menu li:focus-within>.dd-label{background:color-mix(in srgb,var(--brand) 12%,transparent);color:var(--ink);outline:none}
+.dd-label::after{content:"▾";margin-left:6px;font-size:.8em}
+.sub{list-style:none;margin:0;padding:6px;position:absolute;left:0;top:100%;min-width:190px;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.12);
+opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s}
+.has-sub:hover>.sub,.has-sub:focus-within>.sub{opacity:1;visibility:visible;transform:none}
+
+/* active link (CSS-only scroll target indicator) */
+html:has(#design:target) .menu a[href="#design"],
+html:has(#implementation:target) .menu a[href="#implementation"],
+html:has(#testing:target) .menu a[href="#testing"],
+html:has(#optimization:target) .menu a[href="#optimization"]{background:var(--brand);color:var(--brand-ink)}
+
+@media (max-width:720px){
+ .burger{display:grid}
+ .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--card);border-bottom:1px solid var(--line);padding:8px 16px 14px;
+  display:none}
+ #toggle:checked~.menu{display:flex}
+ .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 0 14px;min-width:0}
+ .dd-label::after{content:""}
+}
+
+/* ---------- PAGE ---------- */
+main{max-width:960px;margin:auto;padding:24px 16px 64px}
+.hero{padding:32px 0 8px}
+.hero h1{font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
+.hero p{color:var(--muted);max-width:60ch;margin:0}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:20px}
+section:target{border-color:var(--brand)}
+h2{margin:0 0 10px;font-size:1.3rem}h3{margin:18px 0 6px;font-size:1rem}
+ul,ol{padding-left:20px;margin:6px 0}li{margin:3px 0}
+code,pre{font:13px/1.5 ui-monospace,Menlo,Consolas,monospace}
+code{background:color-mix(in srgb,var(--brand) 10%,transparent);padding:1px 5px;border-radius:5px}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px;overflow-x:auto;margin:8px 0}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+td input{width:20px;height:20px;accent-color:var(--ok)}
+.tick{font-size:.85rem;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.pill{border:1px solid var(--line);border-radius:10px;padding:12px}.pill b{display:block;color:var(--brand)}
+.demo-card{margin-top:12px;border:1px dashed var(--line);border-radius:10px;padding:12px;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+ <input type="checkbox" id="toggle" aria-label="Toggle navigation menu">
+ <div class="bar">
+  <a class="brand" href="#top">CSS<b>Nav</b></a>
+  <label class="burger" for="toggle" aria-hidden="true"><span></span></label>
+ </div>
+ <!-- menu is a sibling of the checkbox so :checked~.menu works -->
+ <ul class="menu" style="max-width:960px;margin:auto" role="list">
+  <li><a href="#design">Design</a></li>
+  <li><a href="#implementation">Implementation</a></li>
+  <li class="has-sub"><span class="dd-label" tabindex="0">Techniques</span>
+   <ul class="sub">
+    <li><a href="#t-hamburger">Checkbox hamburger</a></li>
+    <li><a href="#t-dropdown">Hover/focus dropdown</a></li>
+    <li><a href="#t-active">:has() active state</a></li>
+   </ul>
+  </li>
+  <li><a href="#testing">Testing</a></li>
+  <li><a href="#optimization">Optimization</a></li>
+ </ul>
+</header>
+
+<main id="top">
+ <div class="hero">
+  <h1>Interactive CSS-Based Web Navigation System</h1>
+  <p>A responsive navigation bar built with <strong>HTML and CSS only</strong> — no JavaScript. Resize the window, hover the “Techniques” menu, use the Tab key, and click the links to see it work. The sections below document the design, implementation, testing and optimization.</p>
+ </div>
+
+ <section id="design">
+  <h2>1. Design</h2>
+  <div class="grid">
+   <div class="pill"><b>Objective</b>Fast, accessible navigation without scripts.</div>
+   <div class="pill"><b>Desktop</b>Horizontal bar, dropdown on hover and keyboard focus.</div>
+   <div class="pill"><b>Mobile (≤720px)</b>Hamburger toggles a stacked menu.</div>
+   <div class="pill"><b>Theme</b>Light/dark via <code>prefers-color-scheme</code>.</div>
+  </div>
+  <h3>Structure</h3>
+  <p>Semantic markup: <code>&lt;header&gt;</code> → <code>&lt;ul&gt;</code> list of links → nested <code>&lt;ul class="sub"&gt;</code> for the dropdown. Colours are CSS custom properties so the theme is defined once.</p>
+ </section>
+
+ <section id="implementation">
+  <h2>2. Implementation</h2>
+  <h3 id="t-hamburger">Checkbox hamburger</h3>
+  <p>A hidden checkbox stores the open/closed state; a <code>&lt;label&gt;</code> toggles it. The sibling selector shows the menu.</p>
+<pre>#toggle:checked ~ .menu { display:flex }</pre>
+  <h3 id="t-dropdown">Hover / focus dropdown</h3>
+  <p><code>:focus-within</code> makes the same menu work for keyboard users.</p>
+<pre>.has-sub:hover > .sub,
+.has-sub:focus-within > .sub { opacity:1; visibility:visible }</pre>
+  <h3 id="t-active">Active-link highlight</h3>
+  <p>The <code>:has()</code> selector highlights the link for the section in the URL hash, with no scroll-spy script.</p>
+<pre>html:has(#design:target) .menu a[href="#design"]{ background:var(--brand) }</pre>
+  <h3>Other features</h3>
+  <ul><li>Sticky header (<code>position:sticky</code>)</li><li>Smooth scrolling + <code>scroll-padding-top</code> so headings are not hidden</li><li>Hamburger icon animates into an “X”</li><li>Respects <code>prefers-reduced-motion</code></li></ul>
+ </section>
+
+ <section id="testing">
+  <h2>3. Testing</h2>
+  <p>Tick each box as you verify it (checkboxes are CSS/HTML only; state resets on reload).</p>
+  <div class="scroll"><table>
+   <tr><th>#</th><th>Test case</th><th>Expected result</th><th>Pass</th></tr>
+   <tr><td>1</td><td>Click each main link</td><td>Page scrolls smoothly to section; link becomes highlighted</td><td><input type="checkbox" aria-label="Test 1 passed"></td></tr>
+   <tr><td>2</td><td>Hover “Techniques”</td><td>Dropdown fades in; closes on mouse-out</td><td><input type="checkbox" aria-label="Test 2 passed"></td></tr>
+   <tr><td>3</td><td>Tab through the menu</td><td>Visible focus ring; dropdown opens on focus</td><td><input type="checkbox" aria-label="Test 3 passed"></td></tr>
+   <tr><td>4</td><td>Width ≤720px</td><td>Links hidden; hamburger visible</td><td><input type="checkbox" aria-label="Test 4 passed"></td></tr>
+   <tr><td>5</td><td>Tap hamburger</td><td>Menu opens; icon becomes “X”; tap again closes</td><td><input type="checkbox" aria-label="Test 5 passed"></td></tr>
+   <tr><td>6</td><td>Switch OS to dark mode</td><td>Colours change with readable contrast</td><td><input type="checkbox" aria-label="Test 6 passed"></td></tr>
+   <tr><td>7</td><td>Scroll down the page</td><td>Header stays fixed at top</td><td><input type="checkbox" aria-label="Test 7 passed"></td></tr>
+   <tr><td>8</td><td>Disable JavaScript</td><td>Everything still works</td><td><input type="checkbox" aria-label="Test 8 passed"></td></tr>
+  </table></div>
+  <h3>Browsers / devices to test</h3>
+  <p>Chrome, Firefox, Safari, Edge; Android and iOS phones; Chrome DevTools device mode at 320, 375, 768 and 1280px. Use Lighthouse (Accessibility) and the axe extension for automated checks.</p>
+  <p class="tick">Note: <code>:has()</code> and <code>color-mix()</code> need recent browsers; older ones simply skip the active highlight and tinted hover while links keep working.</p>
+ </section>
+
+ <section id="optimization">
+  <h2>4. Optimization</h2>
+  <ul>
+   <li><b>Zero JavaScript</b> — no parse/execute cost, no blocking scripts.</li>
+   <li><b>Single file, no external requests</b> — no images or web fonts; system font stack avoids layout shift.</li>
+   <li><b>Compositor-friendly animation</b> — only <code>opacity</code> and <code>transform</code> are animated.</li>
+   <li><b>CSS variables</b> — one theme definition, less repeated CSS.</li>
+   <li><b>Accessibility</b> — semantic lists, ARIA label on the toggle, 44px touch target, focus styles, reduced-motion support.</li>
+   <li><b>Next steps</b> — minify CSS, add <code>aria-expanded</code> via a small JS enhancement if screen-reader announcements are required.</li>
+  </ul>
+  <div class="demo-card">Conclusion: a fully responsive, keyboard-friendly navigation system can be delivered with CSS alone, keeping it light, fast and easy to maintain.</div>
+ </section>
+</main>
+<footer>Micro Project · CSS-Based Web Navigation System · Dhruv & Dhanesh</footer>
+</body>
+</html>
