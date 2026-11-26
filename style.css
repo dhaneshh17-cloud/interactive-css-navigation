@@ -77,7 +77,7 @@ body {
 }
 
 /* =========================================================
-   Pure CSS 3D Showcase & Depth Utilities (Global & Reusable)
+   Compact Pure CSS 3D Animated Graphics & Depth Utilities
    ========================================================= */
 
 .card-3d-scene {
@@ -85,20 +85,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
-  margin: 16px auto;
-  max-width: 540px;
+  padding: 8px;
+  margin: 12px auto;
+  max-width: 340px;
   width: 100%;
+}
+
+.card-3d-scene.compact-3d {
+  max-width: 320px;
+  padding: 4px;
+  margin: 12px auto 16px;
 }
 
 .card-3d {
   width: 100%;
   transform-style: preserve-3d;
-  border-radius: 14px;
+  border-radius: 12px;
   background: #ffffff;
-  box-shadow: 0 15px 35px -5px rgba(20, 33, 61, 0.15), 0 8px 16px -6px rgba(20, 33, 61, 0.1);
+  box-shadow: 0 10px 25px -4px rgba(20, 33, 61, 0.12), 0 4px 10px -2px rgba(20, 33, 61, 0.06);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
-  animation: float3DTilt 6s ease-in-out infinite alternate;
+  animation: float3DTilt 5.5s ease-in-out infinite alternate;
   cursor: pointer;
   overflow: hidden;
   border: 1px solid var(--line, #e2e6ee);
@@ -107,8 +113,8 @@ body {
 .card-3d:hover,
 .card-3d-scene:hover .card-3d {
   animation-play-state: paused;
-  transform: scale(1.05) rotateX(0deg) rotateY(0deg);
-  box-shadow: 0 22px 45px -5px rgba(20, 33, 61, 0.2), 0 12px 24px -6px rgba(20, 33, 61, 0.12);
+  transform: scale(1.04) rotateX(0deg) rotateY(0deg);
+  box-shadow: 0 18px 36px -4px rgba(20, 33, 61, 0.18), 0 8px 16px -4px rgba(20, 33, 61, 0.1);
 }
 
 .card-3d svg,
@@ -120,13 +126,13 @@ body {
 
 @keyframes float3DTilt {
   0% {
-    transform: rotateX(8deg) rotateY(-10deg) translateY(0px);
+    transform: rotateX(7deg) rotateY(-8deg) translateY(0px);
   }
   50% {
-    transform: rotateX(0deg) rotateY(4deg) translateY(-8px);
+    transform: rotateX(0deg) rotateY(3deg) translateY(-5px);
   }
   100% {
-    transform: rotateX(-8deg) rotateY(10deg) translateY(0px);
+    transform: rotateX(-7deg) rotateY(8deg) translateY(0px);
   }
 }
 
@@ -141,8 +147,8 @@ body {
 
 .surface-3d:hover,
 .tilt-3d-card:hover {
-  transform: perspective(800px) translateY(-4px) rotateX(2.5deg) rotateY(-2.5deg);
-  box-shadow: 0 14px 28px rgba(20, 33, 61, 0.1), 0 6px 12px rgba(20, 33, 61, 0.06);
+  transform: perspective(800px) translateY(-3px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 12px 24px rgba(20, 33, 61, 0.08), 0 4px 10px rgba(20, 33, 61, 0.05);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -162,7 +168,7 @@ body {
 }
 
 .hero {
-  min-height: 80vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,14 +204,18 @@ body {
 }
 
 .content {
-  min-height: 40vh;
-  padding: 70px 10%;
+  min-height: 30vh;
+  padding: 40px 10%;
   text-align: center;
 }
 
 .content h2 {
-  margin-bottom: 15px;
-  font-size: 30px;
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+.content p {
+  margin-bottom: 14px;
 }
 
 @media (max-width: 700px) {
