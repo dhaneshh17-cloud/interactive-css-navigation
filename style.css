@@ -19,7 +19,13 @@
 body {
   font-family: Arial, sans-serif;
   color: var(--text);
-  background: var(--light);
+  background-color: var(--light, #ffffff);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.035) 0%, transparent 60%),
+    radial-gradient(rgba(20, 33, 61, 0.045) 1px, transparent 1px);
+  background-size: 100% 100%, 24px 24px;
+  background-position: 0 0, 0 0;
+  background-attachment: fixed;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,7 +38,7 @@ body {
     --line: #e2e6ee;
   }
   body {
-    background: #ffffff !important;
+    background-color: #ffffff !important;
     color: #14213d !important;
   }
 }
@@ -79,6 +85,14 @@ body {
 /* =========================================================
    Compact Pure CSS 3D Animated Graphics & Depth Utilities
    ========================================================= */
+
+.cards-3d-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 14px 0;
+  perspective: 1000px;
+}
 
 .card-3d-scene {
   perspective: 900px;
@@ -136,6 +150,10 @@ body {
   }
 }
 
+.card-3d.alt-tilt {
+  animation-delay: -2.75s;
+}
+
 /* Lightweight 3D Depth Utilities for Content Panels, Cards, and Feature Blocks */
 .surface-3d,
 .tilt-3d-card {
@@ -168,14 +186,14 @@ body {
 }
 
 .hero {
-  min-height: 50vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 40px 8%;
-  background: #ffffff;
+  background: transparent;
 }
 
 .hero h1 {
@@ -204,9 +222,12 @@ body {
 }
 
 .content {
-  min-height: 30vh;
-  padding: 40px 10%;
+  min-height: 25vh;
+  padding: 36px 10%;
   text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
 }
 
 .content h2 {

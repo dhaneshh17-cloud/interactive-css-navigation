@@ -15,7 +15,7 @@
 :root[data-theme="dark"]{--bg:#ffffff;--card:#ffffff;--ink:#14213d;--muted:#5b6475;--brand:#2a5bd7;--brand-ink:#fff;--line:#e2e6ee;--ok:#1b8a4b}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{margin:0;background-color:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background-image:radial-gradient(circle at 50% 0%,rgba(42,91,215,.035) 0%,transparent 60%),radial-gradient(rgba(20,33,61,.045) 1px,transparent 1px);background-size:100% 100%,24px 24px;background-attachment:fixed}
 a{color:inherit;text-decoration:none}
 
 
@@ -77,10 +77,12 @@ td input{width:20px;height:20px;accent-color:var(--ok)}
 .pill{border:1px solid var(--line);border-radius:10px;padding:12px}.pill b{display:block;color:var(--brand)}
 .demo-card{margin-top:12px;border:1px dashed var(--line);border-radius:10px;padding:12px;color:var(--muted)}
 footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
+.cards-3d-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:14px 0;perspective:1000px}
 .card-3d-scene{perspective:900px;display:flex;justify-content:center;align-items:center;padding:8px;margin:12px auto;max-width:340px;width:100%}
 .card-3d-scene.compact-3d{max-width:320px;padding:4px;margin:12px auto 16px}
 .card-3d{width:100%;transform-style:preserve-3d;border-radius:12px;background:#ffffff;box-shadow:0 10px 25px -4px rgba(20,33,61,0.12),0 4px 10px -2px rgba(20,33,61,0.06);transition:transform .4s cubic-bezier(.25,.8,.25,1),box-shadow .4s ease;animation:float3DTilt 5.5s ease-in-out infinite alternate;cursor:pointer;overflow:hidden;border:1px solid var(--line)}
 .card-3d:hover,.card-3d-scene:hover .card-3d{animation-play-state:paused;transform:scale(1.04) rotateX(0deg) rotateY(0deg);box-shadow:0 18px 36px -4px rgba(20,33,61,0.18),0 8px 16px -4px rgba(20,33,61,0.1)}
+.card-3d.alt-tilt{animation-delay:-2.75s}
 .card-3d svg,.card-3d img{display:block;width:100%;height:auto}
 @keyframes float3DTilt{0%{transform:rotateX(7deg) rotateY(-8deg) translateY(0px)}50%{transform:rotateX(0deg) rotateY(3deg) translateY(-5px)}100%{transform:rotateX(-7deg) rotateY(8deg) translateY(0px)}}
 .surface-3d,.tilt-3d-card{perspective:800px;transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;will-change:transform}
@@ -164,6 +166,37 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
   </div>
   <h3>Structure</h3>
   <p>Semantic markup: <code>&lt;header&gt;</code> → <code>&lt;ul&gt;</code> list of links → nested <code>&lt;ul class="sub"&gt;</code> for the dropdown. Colours are CSS custom properties so the theme is defined once.</p>
+  <div class="card-3d-scene compact-3d">
+   <div class="card-3d alt-tilt">
+    <svg class="compact-3d-svg" viewBox="0 0 320 130" width="100%" height="auto" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Semantic Document Tree">
+     <defs>
+      <linearGradient id="treeBg" x1="0" y1="0" x2="320" y2="130" gradientUnits="userSpaceOnUse">
+       <stop offset="0%" stop-color="#0f172a"/>
+       <stop offset="100%" stop-color="#1e293b"/>
+      </linearGradient>
+     </defs>
+     <rect width="320" height="130" rx="12" fill="url(#treeBg)"/>
+     <rect x="0.5" y="0.5" width="319" height="129" rx="11.5" stroke="#334155" stroke-opacity="0.6"/>
+     <rect x="16" y="14" width="86" height="18" rx="5" fill="#3b82f6" fill-opacity="0.2"/>
+     <text x="24" y="27" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="9" font-weight="700">SEMANTIC DOM</text>
+     <text x="16" y="48" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Accessible Tree Hierarchy</text>
+     <g transform="translate(18, 60)">
+      <rect width="70" height="22" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2"/>
+      <text x="8" y="15" fill="#93c5fd" font-family="ui-monospace, monospace" font-size="9">&lt;header&gt;</text>
+      <path d="M70 11L95 11" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="95" width="56" height="22" rx="4" fill="#1e293b" stroke="#06b6d4" stroke-width="1.2"/>
+      <text x="103" y="15" fill="#67e8f9" font-family="ui-monospace, monospace" font-size="9">&lt;ul&gt;</text>
+      <path d="M151 11L176 11" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="176" width="56" height="22" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+      <text x="184" y="15" fill="#6ee7b7" font-family="ui-monospace, monospace" font-size="9">&lt;li&gt;</text>
+      <path d="M232 11L254 11" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="254" width="46" height="22" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+      <text x="262" y="15" fill="#fde68a" font-family="ui-monospace, monospace" font-size="9">&lt;a&gt;</text>
+      <text x="4" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="8">Zero Div-Soup · Semantic List Structure · Screen-Reader Validated</text>
+     </g>
+    </svg>
+   </div>
+  </div>
  </section>
 
  <section id="implementation">
@@ -213,6 +246,35 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
   <h3 id="t-active">Active-link highlight</h3>
   <p>The <code>:has()</code> selector highlights the link for the section in the URL hash, with no scroll-spy script.</p>
 <pre>html:has(#design:target) .menu a[href="#design"]{ background:var(--brand) }</pre>
+  <div class="card-3d-scene compact-3d">
+   <div class="card-3d alt-tilt">
+    <svg class="compact-3d-svg" viewBox="0 0 320 130" width="100%" height="auto" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Active Link Hash Tracker">
+     <defs>
+      <linearGradient id="hasBg" x1="0" y1="0" x2="320" y2="130" gradientUnits="userSpaceOnUse">
+       <stop offset="0%" stop-color="#0f172a"/>
+       <stop offset="100%" stop-color="#1e293b"/>
+      </linearGradient>
+     </defs>
+     <rect width="320" height="130" rx="12" fill="url(#hasBg)"/>
+     <rect x="0.5" y="0.5" width="319" height="129" rx="11.5" stroke="#334155" stroke-opacity="0.6"/>
+     <rect x="16" y="14" width="84" height="18" rx="5" fill="#3b82f6" fill-opacity="0.2"/>
+     <text x="24" y="27" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="9" font-weight="700">HASH ROUTING</text>
+     <text x="16" y="48" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="700">:has(:target) State Engine</text>
+     <g transform="translate(18, 58)">
+      <rect width="138" height="52" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2"/>
+      <text x="10" y="18" fill="#94a3b8" font-family="ui-monospace, monospace" font-size="8">URL: #implementation</text>
+      <rect x="10" y="26" width="118" height="18" rx="4" fill="#2563eb"/>
+      <text x="18" y="38" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Active Link Match</text>
+     </g>
+     <g transform="translate(164, 58)">
+      <rect width="138" height="52" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+      <text x="10" y="20" fill="#34d399" font-family="system-ui, sans-serif" font-size="9" font-weight="700">No ScrollSpy Script</text>
+      <text x="10" y="34" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="8">Native Browser Event</text>
+      <text x="10" y="46" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="8">Pure Declarative CSS</text>
+     </g>
+    </svg>
+   </div>
+  </div>
   <h3>Other features</h3>
   <ul><li>Sticky header (<code>position:sticky</code>)</li><li>Smooth scrolling + <code>scroll-padding-top</code> so headings are not hidden</li><li>Hamburger icon animates into an “X”</li><li>Respects <code>prefers-reduced-motion</code></li></ul>
  </section>
@@ -270,6 +332,43 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
   </table></div>
   <h3>Browsers / devices to test</h3>
   <p>Chrome, Firefox, Safari, Edge; Android and iOS phones; Chrome DevTools device mode at 320, 375, 768 and 1280px. Use Lighthouse (Accessibility) and the axe extension for automated checks.</p>
+  <div class="card-3d-scene compact-3d">
+   <div class="card-3d alt-tilt">
+    <svg class="compact-3d-svg" viewBox="0 0 320 130" width="100%" height="auto" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Browser Engine Compatibility Matrix">
+     <defs>
+      <linearGradient id="engBg" x1="0" y1="0" x2="320" y2="130" gradientUnits="userSpaceOnUse">
+       <stop offset="0%" stop-color="#0f172a"/>
+       <stop offset="100%" stop-color="#1e293b"/>
+      </linearGradient>
+     </defs>
+     <rect width="320" height="130" rx="12" fill="url(#engBg)"/>
+     <rect x="0.5" y="0.5" width="319" height="129" rx="11.5" stroke="#334155" stroke-opacity="0.6"/>
+     <rect x="16" y="14" width="80" height="18" rx="5" fill="#10b981" fill-opacity="0.2"/>
+     <text x="24" y="27" fill="#34d399" font-family="system-ui, sans-serif" font-size="9" font-weight="700">ENGINE AUDIT</text>
+     <text x="16" y="48" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Multi-Browser Engine Matrix</text>
+     <g transform="translate(18, 60)">
+      <rect width="64" height="48" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+      <text x="8" y="20" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Chrome</text>
+      <text x="8" y="38" fill="#34d399" font-family="system-ui, sans-serif" font-size="8">✓ Blink</text>
+     </g>
+     <g transform="translate(88, 60)">
+      <rect width="64" height="48" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="1"/>
+      <text x="8" y="20" fill="#fed7aa" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Firefox</text>
+      <text x="8" y="38" fill="#34d399" font-family="system-ui, sans-serif" font-size="8">✓ Gecko</text>
+     </g>
+     <g transform="translate(158, 60)">
+      <rect width="64" height="48" rx="6" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+      <text x="8" y="20" fill="#a5f3fc" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Safari</text>
+      <text x="8" y="38" fill="#34d399" font-family="system-ui, sans-serif" font-size="8">✓ WebKit</text>
+     </g>
+     <g transform="translate(228, 60)">
+      <rect width="64" height="48" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+      <text x="8" y="20" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Edge</text>
+      <text x="8" y="38" fill="#34d399" font-family="system-ui, sans-serif" font-size="8">✓ 100%</text>
+     </g>
+    </svg>
+   </div>
+  </div>
   <p class="tick">Note: <code>:has()</code> and <code>color-mix()</code> need recent browsers; older ones simply skip the active highlight and tinted hover while links keep working.</p>
  </section>
 
